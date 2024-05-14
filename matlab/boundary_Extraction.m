@@ -1,0 +1,11 @@
+a=imread("j.png");
+b=[1 1 1;1 1 1;1 1 1];
+erode=imerode(a,b);
+dilate=imdilate(a,b);
+internal=a-erode;
+external=dilate-a;
+subplot(2,3,1);imshow(a);title("original");
+subplot(2,3,2);imshow(erode);title("Erosion");
+subplot(2,3,3);imshow(dilate);title("Dilation");
+subplot(2,3,4);imshow(internal);title("Internal Boundary");
+subplot(2,3,5);imshow(external);title("External Boundary");
